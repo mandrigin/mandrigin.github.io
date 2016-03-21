@@ -10,15 +10,16 @@ body {
     font-style: normal;
     font-variant: normal;
     font-weight: 400;
-    line-height: 24px; 
+    line-height: 48px; 
     background-color: white;
     color: #5C5C5C;
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 24px;
     color: #4997D0;
-    line-height: 36px;
+    font-weight: bold;
+    margin: 0px;
 }
 
 h5 {
@@ -41,8 +42,13 @@ a {
     color: #9C9C9C;
 }
 
+.skill {
+    color: #5C5C5C;
+    cursor: help;
+}
+
 #cursor {
-    animation: blinker 1s step-start infinite;
+    animation: blinker 1s ease-in-out infinite;
 }
 
 @keyframes blinker {  
@@ -54,17 +60,23 @@ a {
     <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
     <title>Igor M.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    
 </head>
 <body>
     <div id="content">
-        <h1># igor mandrigin</h1>
-        <h5><span class="light">i write</span> code<span class="light">,</span>&nbsp;tests&nbsp;<span class="light">&amp;</span>&nbsp;texts&nbsp;<span id="cursor">_</span></h5>
         <div>
-            <a href="http://twitter.com/mandrigin">twitter</a>, <a href="https://medium.com/@mandrigin">blog</a>, <a href="https://se.linkedin.com/in/mandrigin">linkedin</a>
+            <h1># Igor Mandrigin</h1>
+        </div>
+        <div class="light">
+            <span class="skill" title="Glad that you asked!
+I can do: golang, ios stuff (objective c++, swift), python, java (android and more).
+Look at my LinkedIn profile for more!">coding</span>,&nbsp;<span class="skill" title="Leadership, People &amp; Processes. I think people are the key factor in a project success.">peopleware</span>&nbsp;and&nbsp;<span class="skill" title="Don't forget to check out my blog!">writing</span>&nbsp;<span id="cursor">_</span>
+        </div>
+        <div>
+            <a href="http://twitter.com/mandrigin">Twitter</a>, <a href="https://medium.com/@mandrigin">Blog</a>, <a href="https://se.linkedin.com/in/mandrigin">LinkedIn</a>
         </div>
     </div>
 </body>
 </html>
+<!-- Thank you for reading this! -->
 
 
