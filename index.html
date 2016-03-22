@@ -14,20 +14,22 @@ body {
     line-height: 2em; 
     background-color: white;
     color: #5C5C5C;
+    font-size: 20px;
+}
+
+.negative-margin {
+    margin-left: -1em;
+    margin-left: -2ch;
+    margin-bottom: -2em;
+    display: none;
 }
 
 @media screen and (min-width: 375px) {
     body {
         font-size: 24px;
     }
-}
-
-@media screen and (max-width: 375px) {
-    body {
-        font-size: 20px;
-    }
     .negative-margin {
-        display: none;
+        display: block;
     }
 }
 
@@ -76,12 +78,6 @@ a {
     cursor: help;
 }
 
-.negative-margin {
-    margin-left: -1em;
-    margin-left: -2ch;
-    margin-bottom: -2em;
-}
-
 #cursor {
     animation: blinker 1s ease-in-out infinite;
 }
@@ -117,7 +113,7 @@ Look at my LinkedIn profile for more!">coding</span>, <span class="skill" title=
     </div>
     <script>
         var headers = document.getElementsByTagName("h1");
-        var colors = [ "#4997D0", "#C80815", "#FF8243", "#4997D0", "#9ECE08" ];
+        var colors = [ "#4997D0", "#DE5D83", "#FA8072", "#C9A0DC", "#C80815", "#FF8243", "#4997D0", "#9ECE08" ];
         colors.sort( function() { return 0.5 - Math.random() } );
         for (var i = 0; i < headers.length; i++) {
             headers[i].style.color = colors[0]; 
