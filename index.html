@@ -31,11 +31,23 @@ a {
     color: #5C5C5C;
 }
 
-#content {
-    width: 400px ;
-    margin-left: auto ;
-    margin-right: auto ;
-    margin-top: 48px;
+#container {
+    margin-left: auto;
+    margin-right: auto;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+#content { 
 }
 
 .light {
@@ -57,23 +69,26 @@ a {
 -->
 </style>
 
+    <!-- Sorry pals, but the page looks by a long shot better with Inconsolata. Therefore, Web Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
-    <title>Igor M.</title>
+    <title>Igor Mandrigin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 </head>
 <body>
-    <div id="content">
-        <div>
-            <h1># Igor Mandrigin</h1>
-        </div>
-        <div class="light">
-            <span class="skill" title="Leadership, People &amp; Processes.
+    <div id="container">
+        <div id="content">
+            <div>
+                <h1># Igor Mandrigin</h1>
+            </div>
+            <div class="light">
+                <span class="skill" title="Leadership, People &amp; Processes.
 I think people are the key factor in a project success.">peopleware</span>,&nbsp;<span class="skill" title="Glad that you asked!
 I can do: golang, ios stuff (objective c++, swift), python, java (android and more).
 Look at my LinkedIn profile for more!">coding</span>&nbsp;and&nbsp;<span class="skill" title="Don't forget to check out my blog!">writing</span>&nbsp;<span id="cursor">_</span>
-        </div>
-        <div>
-            <a href="http://twitter.com/mandrigin">Twitter</a>, <a href="https://medium.com/@mandrigin">Blog</a>, <a href="https://se.linkedin.com/in/mandrigin">LinkedIn</a>
+            </div>
+            <div>
+                <a href="http://twitter.com/mandrigin">Twitter</a>, <a href="https://medium.com/@mandrigin">Blog</a>, <a href="https://se.linkedin.com/in/mandrigin">LinkedIn</a>
+            </div>
         </div>
     </div>
     <script>
