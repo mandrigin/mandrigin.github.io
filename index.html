@@ -1,5 +1,7 @@
 <html>
 <head>
+    <!-- Sorry pals, but the page looks by a long shot better with Inconsolata. Therefore, Web Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
 <!-- inline css because I have only 1 page
      it reduces the amount of requests to be made -->
 <style TYPE="text/css">
@@ -59,6 +61,12 @@ a {
     cursor: help;
 }
 
+.negative-margin {
+    margin-left: -24px;
+    margin-left: -2ch;
+    margin-bottom: -48px;
+}
+
 #cursor {
     animation: blinker 1s ease-in-out infinite;
 }
@@ -69,16 +77,17 @@ a {
 -->
 </style>
 
-    <!-- Sorry pals, but the page looks by a long shot better with Inconsolata. Therefore, Web Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
     <title>Igor Mandrigin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 </head>
 <body>
     <div id="container">
         <div id="content">
+            <div class="negative-margin">
+                <h1>#</h1>
+            </div>
             <div>
-                <h1># Igor Mandrigin</h1>
+                <h1>Igor Mandrigin</h1>
             </div>
             <div class="light">
                 <span class="skill" title="Leadership, People &amp; Processes.
@@ -95,7 +104,9 @@ Look at my LinkedIn profile for more!">coding</span>&nbsp;and&nbsp;<span class="
         var headers = document.getElementsByTagName("h1");
         var colors = [ "#4997D0", "#C80815", "#FF8243", "#4997D0", "#9ECE08" ];
         colors.sort( function() { return 0.5 - Math.random() } );
-        headers[0].style.color = colors[0]; 
+        for (var i = 0; i < headers.length; i++) {
+            headers[i].style.color = colors[0]; 
+        } 
     </script>
 </body>
 </html>
