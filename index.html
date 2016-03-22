@@ -78,6 +78,49 @@ a {
     cursor: help;
 }
 
+a {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+a#linkedin:hover {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: -5px;
+    margin-bottom: -5px;
+    background-color: #1C87BD;
+    color: white;
+    border-radius: 3px;
+}
+
+a#twitter {
+}
+
+a#medium {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: -5px;
+    margin-bottom: -5px;
+}
+
+a#twitter:hover {
+    color: #1DA1F2;
+}
+
+a#medium:hover {
+    color: #00AB6B;
+    padding-left: 14px;
+    padding-right: 14px;
+    margin-left: -15px;
+    margin-right: -15px;
+    border-radius: 1em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #00AB6B;
+}
+
 #cursor {
     animation: blinker 1s ease-in-out infinite;
 }
@@ -107,7 +150,7 @@ I can do: golang, ios stuff (objective c++, swift), python, java (android and mo
 Look at my LinkedIn profile for more!">coding</span>, <span class="skill" title="Don't forget to check out my blog!">writing</span>.
             </div>
             <div>
-                <a href="http://twitter.com/mandrigin">Twitter</a>, <a href="https://medium.com/@mandrigin">Blog</a>, <a href="https://se.linkedin.com/in/mandrigin">LinkedIn</a>&nbsp;<span id="cursor">_</span>
+                <a id="twitter" href="http://twitter.com/mandrigin">Twitter</a>, <a id="medium" href="https://medium.com/@mandrigin">Blog</a>, <a id="linkedin" href="https://se.linkedin.com/in/mandrigin">LinkedIn</a>&nbsp;<span id="cursor">_</span>
             </div>
         </div>
     </div>
@@ -118,6 +161,9 @@ Look at my LinkedIn profile for more!">coding</span>, <span class="skill" title=
         for (var i = 0; i < headers.length; i++) {
             headers[i].style.color = colors[0]; 
         } 
+
+        var body = document.getElementsByTagName("body")[0];
+        body.style.display = "block";
     </script>
 </body>
 </html>
