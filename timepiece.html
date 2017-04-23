@@ -12,8 +12,8 @@ body {
     font-variant: normal;
     font-weight: 400;
     line-height: 2em;
-    background-color: white;
-    color: #5C5C5C;
+    background-color: #49639C;
+    color: #DFDFDF;
     font-size: 20px;
 }
 
@@ -34,10 +34,9 @@ body {
 }
 
 h1 {
-    font-size: 1em;
-    color: #4997D0;
-    font-weight: bold;
+    font-size: 1.3em;
     margin: 0px;
+    text-align: center;
 }
 
 h5 {
@@ -46,7 +45,7 @@ h5 {
 }
 
 a {
-    color: #5C5C5C;
+    color: #FFFFFF;
 }
 
 #container {
@@ -70,7 +69,6 @@ a {
 }
 
 .light {
-    color: #9C9C9C;
 }
 
 .skill {
@@ -134,9 +132,6 @@ a#medium:hover {
             <div>
             <a href="/">&larr; back</a>
             </div>
-            <div class="negative-margin">
-                <h1>#</h1>
-            </div>
             <div>
                 <h1>Timepiece for Mac</h1>
             </div>
@@ -153,17 +148,6 @@ a#medium:hover {
             </div>
         </div>
     </div>
-    <script>
-        var headers = document.getElementsByTagName("h1");
-        var colors = [ "#4997D0", "#DE5D83", "#FA8072", "#C9A0DC", "#C80815", "#FF8243", "#4997D0", "#9ECE08" ];
-        colors.sort( function() { return 0.5 - Math.random() } );
-        for (var i = 0; i < headers.length; i++) {
-            headers[i].style.color = colors[0];
-        }
-
-        var body = document.getElementsByTagName("body")[0];
-        body.style.display = "block";
-    </script>
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
