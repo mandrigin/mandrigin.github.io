@@ -89,6 +89,16 @@ a {
     margin-bottom: -5px;
 }
 
+#now {
+    background-color: #1C87BD;
+    color: white;
+    border-radius: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-transform: uppercase;
+    font-size: 0.6em;
+}
+
 a#linkedin:hover {
     background-color: #1C87BD;
     color: white;
@@ -125,7 +135,7 @@ a#medium:hover {
 -->
 </style>
 
-    <title>Igor Mandrigin</title>
+    <title>Igor Mandrigin, Ethereum blockchain developer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 </head>
 <body>
@@ -135,23 +145,28 @@ a#medium:hover {
                 <h1>#</h1>
             </div>
             <div>
-                <h1>Igor Mandrigin</h1>
+                <h1>Igor Mandrigin, lead developer</h1>
             </div>
             <div class="light">
-                <span class="skill" title="Leadership, People &amp; Processes.
-I think people are the key factor in a project success.">peopleware</span>, <span class="skill" title="Glad that you asked!
-I can do: golang, ios stuff (objective c++, swift), python, java (android and more).
-Look at my LinkedIn profile for more!">coding</span>, <span class="skill" title="Don't forget to check out my blog!">writing</span>.
+                <span class="skill" title="Developing on top of Ethereum blockchain, Swarm, Whisper. Smart Contracts.
+                Look at my LinkedIn profile for more!"><a id="email" href="mailto:i@mandrigin.ru">blockchain</a></span>,
+                <span class="skill" title="iOS, Android, React Native..."><a id="twitter" href="https://github.com/mandrigin">mobile</a></span>,
+                <span class="skill" title="Don't forget to check out my blog!"><a id="medium" href="https://medium.com/@mandrigin">writing</a></span>.
             </div>
+            <div></div>
             <div>
-                <a id="twitter" href="http://twitter.com/mandrigin">Twitter</a><span class="light">,</span>
-                <a id="medium" href="https://medium.com/@mandrigin">Blog</a><span class="light">,</span>
+                <span class="skill" title="Check out my GitHub repo!"><a id="twitter" href="https://github.com/mandrigin">GitHub</a></span>,
                 <a id="linkedin" href="https://se.linkedin.com/in/mandrigin">CV</a><span class="light">,</span>
                 <a id="email" href="mailto:i@mandrigin.ru">i@mandrigin.ru</a>&nbsp;<span id="cursor">_</span>
             </div>
             <div>
             <br />
             <div class="light">Projects</div>
+            <div><span id="now">now</span> <a href="https://status.im">Status.im</a>  (<a href="https://github.com/status-im/status-go">github</a>)</div>
+            <div><a href="https://operapay.com">OPay by Opera</a>, architect</div>
+            <div><a href="http://www.opera.com/mobile/ios">Opera Mini</a>, iOS team lead</div>
+            </div>
+            <div class="light">side</div>
             <div><a href="https://timepieceapp.com">Timepiece for Mac</a></div>
             <div><a href="https://github.com/mandrigin/AlfredSwitchWindows">Swift Window Switcher (github)</a></div>
             </div>
@@ -162,7 +177,7 @@ Look at my LinkedIn profile for more!">coding</span>, <span class="skill" title=
         var colors = [ "#4997D0", "#DE5D83", "#FA8072", "#C9A0DC", "#C80815", "#FF8243", "#4997D0", "#9ECE08" ];
         colors.sort( function() { return 0.5 - Math.random() } );
         for (var i = 0; i < headers.length; i++) {
-            headers[i].style.color = colors[0];
+            headers[i].style.color = colors[i];
         }
 
         var body = document.getElementsByTagName("body")[0];
