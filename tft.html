@@ -1,0 +1,26 @@
+<html>
+    <title></title>
+    <body>
+        <h1 id="support">detecting...</h1>
+
+        <h1 id="fat-arrow">detecting...</h1>
+
+        <script type="text/javascript">
+            var d = document.getElementById("support");
+            if(window.FileReader) {
+                d.innerHTML = "<code>FileReader</code> is supported";
+            } else {
+                d.innerHTML = "<code>FileReader</code> is NOT supported";
+            }
+
+            var d = document.getElementById("fat-arrow");
+            try {
+                [1, 2, 3].map(n => n ** 2);
+                d.innerHTML = "fat arrow (<code>=></code>) is supported";
+            } catch (err) {
+                d.innerHTML = "fat arrow (<code>=></code>) is NOT supported" + err;
+            }
+        </script>
+
+    </body>
+</html>
