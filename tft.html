@@ -6,6 +6,15 @@
         <h1 id="fat-arrow">detecting...</h1>
 
         <script type="text/javascript">
+
+            function evaluates (statement) {
+               try {
+                    eval(statement)
+                    return true
+               } catch (err) {
+                    return false
+               }
+            }
             var d = document.getElementById("support");
             if(window.FileReader) {
                 d.innerHTML = "<code>FileReader</code> is supported";
@@ -14,10 +23,9 @@
             }
 
             var d = document.getElementById("fat-arrow");
-            try {
-                [1, 2, 3].map(n => n ** 2);
+            if (evaluates('var f = x => 1')) {
                 d.innerHTML = "fat arrow (<code>=></code>) is supported";
-            } catch (err) {
+            } else {
                 d.innerHTML = "fat arrow (<code>=></code>) is NOT supported" + err;
             }
         </script>
