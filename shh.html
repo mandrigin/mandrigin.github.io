@@ -1,0 +1,43 @@
+<html>
+    <title></title>
+<!-- This exposes the library as a global variable: ethers -->
+<script src="https://cdn.ethers.io/scripts/ethers-v3.min.js"
+        charset="utf-8"
+        type="text/javascript">
+</script> 
+    <body>
+        <h1 id="support">detecting...</h1>
+
+        <h1 id="fat-arrow">detecting...</h1>
+
+        <input type="file" title="Upload..." />
+
+        <script type="text/javascript">
+
+            if (window.web3 != null || Web3 != null) {
+                var web3 = window.web3;
+                alert("web3 is there!");
+            } else {
+                alert("no web3!"); 
+            }
+
+/*
+            var d = document.getElementById("support");
+
+            if(window.FileReader) {
+                d.innerHTML = "<code>FileReader</code> is supported";
+            } else {
+                d.innerHTML = "<code>FileReader</code> is NOT supported";
+            }
+
+            var d = document.getElementById("fat-arrow");
+            if (evaluates('var f = x => 1')) {
+                d.innerHTML = "fat arrow (<code>=></code>) is supported";
+            } else {
+                d.innerHTML = "fat arrow (<code>=></code>) is NOT supported";
+            }
+            */
+        </script>
+
+    </body>
+</html>
