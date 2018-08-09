@@ -23,7 +23,7 @@
 
                 if (window.web3 != undefined) {
                     //var web3 = window.web3;
-                    var web3 = Web3(window.web3.currentProvider);
+                    var web3 = new Web3(window.web3.currentProvider);
 
                     d.innerHTML = "web3 is here!" + web3.net.version;
                 } else {
