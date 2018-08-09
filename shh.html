@@ -5,6 +5,9 @@
         charset="utf-8"
         type="text/javascript">
 </script> 
+
+<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+
     <body>
         <h1 id="support">detecting...</h1>
 
@@ -13,14 +16,20 @@
         <input type="file" title="Upload..." />
 
         <script type="text/javascript">
-            var d = document.getElementById("support");
+            //var Web3 = require('web3');
+            
+            window.onload = function() {
+                var d = document.getElementById("support");
 
-            if (window.web3 != undefined) {
-                var web3 = window.web3;
-                d.innerHTML = "web3 is here!";
-            } else {
-                d.innerHTML = "no web3 :(";
-            }
+                if (window.web3 != undefined) {
+                    //var web3 = window.web3;
+                    var web3 = Web3(window.web3.currentProvider);
+
+                    d.innerHTML = "web3 is here!" + web3.net.version;
+                } else {
+                    
+                    d.innerHTML = "no web3 :(";
+                }};
 
 /*
             var d = document.getElementById("support");
