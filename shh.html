@@ -27,7 +27,7 @@
 
                     web3.shh.getPrivateKey("aaa", function(err, value) {
                         if (err) {
-                            d.innerHTML = "shh method is protected";
+                            d.innerHTML = "shh method is protected:" + err;
                         } else {
                             d.innerHTML = "web3 is here!" + value;
                         }
