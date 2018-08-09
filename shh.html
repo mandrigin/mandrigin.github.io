@@ -13,12 +13,13 @@
         <input type="file" title="Upload..." />
 
         <script type="text/javascript">
+            var d = document.getElementById("support");
 
-            if (window.web3 != null || Web3 != null) {
+            if (window.web3 != undefined) {
                 var web3 = window.web3;
-                alert("web3 is there!");
+                d.innerHTML = "web3 is here!";
             } else {
-                alert("no web3!"); 
+                d.innerHTML = "no web3 :(";
             }
 
 /*
