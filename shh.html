@@ -25,9 +25,9 @@
                     //var web3 = window.web3;
                     var web3 = new Web3(window.web3.currentProvider);
 
-                    web3.shh.getPrivateKey("aaa", function(err, value) {
+                    web3.shh.getPrivateKey('3e22b9ffc2387e18636e0a3d0c56b023264c16e78a2adcba1303cefc685e610f', function(err, value) {
                         if (err) {
-                            d.innerHTML = "shh method is protected:" + err;
+                            d.innerHTML = "shh method:" + err;
                         } else {
                             d.innerHTML = "web3 is here!" + value;
                         }
