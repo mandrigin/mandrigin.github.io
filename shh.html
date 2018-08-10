@@ -6,11 +6,16 @@
             var d = document.getElementById("shh-vulnerability");
             var d2 = document.getElementById("shh-support");
 
-            if (window.web3 != undefined) {
-                //var web3 = window.web3;
-                var web3 = new Web3(window.web3.currentProvider);
+            d.innerHTML = "...";
+            d2.innerHTML = "...";
 
+            if (typeof(web3) === "undefined") {
+                if (window.web3 != undefined) {
+                    web3 = new Web3(window.web3.currentProvider);
+                }
+            }
 
+            if (typeof(web3) !== "undefined") {
                 web3.shh.getPrivateKey('3e22b9ffc2387e18636e0a3d0c56b023264c16e78a2adcba1303cefc685e610f', function(err, value) {
                     if (err) {
                         d.innerHTML = "shh method:" + err;
@@ -18,13 +23,11 @@
                         d.innerHTML = "web3 is here!" + value;
                     }
                 });
-
                 web3.shh.info(function(e,v) {
                     d2.innerHTML = "shh info " + JSON.stringify(v);
                 });
 
             } else {
-
                 d.innerHTML = "no web3 :(";
             }
 
