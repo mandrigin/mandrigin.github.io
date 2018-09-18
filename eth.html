@@ -19,7 +19,7 @@
             var network = web3.version.network;
             append(output, ["network", network]);
 
-            web3.eth.getBlock('earliest', false function(err, block) { 
+            web3.eth.getBlock('earliest', false, function(err, block) { 
                 if (err) {
                     append(output, ["error:", err]);
                 } 
@@ -27,7 +27,7 @@
                 append(output, ["earliest block:", block]);
             });
 
-            web3.eth.getBlock('latest', false function(err, block) { 
+            web3.eth.getBlock('latest', false, function(err, block) { 
                 if (err) {
                     append(output, ["error:", err]);
                 } 
