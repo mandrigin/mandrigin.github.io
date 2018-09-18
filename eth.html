@@ -20,7 +20,11 @@
             append(output, ["network", network]);
 
             var blockL = web3.eth.getBlock('latest', function(err, block) {;
-                append(output, ["latest block:", blockL.number, blockL.hash]);
+                if (err) {
+                    append(output, ["error:", err]);
+                } else {
+                    append(output, ["latest block:", block.number, block.hash]);
+                }
             });
         }
 
