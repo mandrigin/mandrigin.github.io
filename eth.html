@@ -19,8 +19,9 @@
             var network = web3.version.network;
             append(output, ["network", network]);
 
-            var blockL = web3.eth.getBlock('latest');
-            append(output, ["latest block:", blockL.number, blockL.hash]);
+            var blockL = web3.eth.getBlock('latest', function(err, block) {;
+                append(output, ["latest block:", blockL.number, blockL.hash]);
+            });
         }
 
 
