@@ -19,12 +19,12 @@
             var network = web3.version.network;
             append(output, ["network", network]);
 
-            var blockL = web3.eth.getBlock('latest', function(err, block) {;
+            var blockL = web3.eth.getBlock('latest', function(err, block) { 
                 if (err) {
                     append(output, ["error:", err]);
-                } else {
-                    append(output, ["latest block:", block.number, block.hash]);
-                }
+                } 
+
+                append(output, ["latest block:", block.number, block.hash]);
             });
         }
 
