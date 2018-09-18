@@ -1,0 +1,62 @@
+<html>
+    <title></title>
+
+    <style>
+        textarea {
+            font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function append(output, data) {
+            var log = output.innerHTML;
+            log += JSON.stringify(data);
+            log += "\n";
+            output.innerHTML = log;
+        }
+
+        function refreshData(web3, output) {
+            var network = web3.version.network;
+            append(output, ["network", network]);
+
+            var blockL = web3.eth.getBlock('latest');
+            append(output, ["latest block:", blockL.number, blockL.hash]);
+        }
+
+
+        function doCheck() {
+            var d = document.getElementById("eth-report");
+            d.innerHTML = "";
+
+            append(d, "checking ETH...");
+
+            if (typeof(web3) === "undefined") {
+                if (window.web3 != undefined) {
+                    web3 = new Web3(window.web3.currentProvider);
+                }
+            }
+
+            if (typeof(web3) !== "undefined") {
+                refreshData(web3, d);
+            } else {
+                append(d, "no web3 found... :(");
+            }
+
+
+        };
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+
+    <body>
+        <form action="#">
+            <textarea name="test" cols="120" rows="40" id="eth-report">no js enabled</textarea>
+        </form>
+
+        <a href="#" onclick="doCheck();">Refresh</a>
+
+        <script type="text/javascript">
+            window.onload = doCheck;
+        </script>
+    </body>
+</html>
