@@ -24,7 +24,9 @@
                 } 
 
                 append(output, [func.name, result]);
-            }
+            };
+
+            append(output, ["debug: p -- callback: ", callback]);
 
             params.push(callback);
 
