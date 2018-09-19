@@ -15,12 +15,15 @@
             output.innerHTML = log;
         }
 
-        function executeFunctionByName(functionName, context /*, args */) {
-          var args = Array.prototype.slice.call(arguments, 2);
+        function executeFunctionByName(o, functionName, context /*, args */) {
+          var args = Array.prototype.slice.call(arguments, 3);
           var namespaces = functionName.split(".");
           var func = namespaces.pop();
+          
+          append(o, ["ctx: ", context, "func: ", func]);
           for(var i = 0; i < namespaces.length; i++) {
             context = context[namespaces[i]];
+            append(o, ["ctx -", i, context, "func: ", func]);
           }
           return context[func].apply(context, args);
         }
@@ -38,7 +41,7 @@
 
             params.push(callback);
 
-            executeFunctionByName(web3, funcName, params);
+            executeFunctionByName(output, web3, funcName, params);
         }
 
 
