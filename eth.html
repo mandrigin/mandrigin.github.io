@@ -15,7 +15,9 @@
             output.innerHTML = log;
         }
 
-        function call(func, params, output) {
+        function callWeb3(func, params, output) {
+            append(output, "debug: callWeb3: ", [func, params, output]);
+
             var callback = function(err, result) {
                 if (err) {
                     append(output, [func.name, " -- error:", err]);
@@ -34,7 +36,7 @@
 
         function refreshData(web3, output) {
 
-            call(web3.net.getPeerCount, [1], output);
+            callWeb3(web3.net.getPeerCount, [1], output);
            
             /*
             web3.net.getPeerCount(function(err, peers) { 
