@@ -15,6 +15,8 @@
             output.innerHTML = log;
         }
 
+
+
         function refreshData(web3, output) {
             web3.net.getPeerCount(function(err, peers) { 
                 if (err) {
@@ -41,6 +43,14 @@
                 } 
 
                 append(output, ["latest block:", block]);
+            });
+
+            web3.eth.getSyncing(callback(error, result){ 
+                if (err) {
+                    append(output, ["error:", err]);
+                } 
+
+                append(output, ["syncing:", result]);
             });
         }
 
