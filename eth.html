@@ -24,11 +24,11 @@
                 append(output, [func.name, result]);
             }
 
-            var p = params.concat(callback);
+            params.push(callback);
 
-            append(output, "debug: p: ", p);
+            append(output, "debug: p: ", params);
 
-            func.apply(p);
+            func.apply(params);
         }
 
 
