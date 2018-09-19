@@ -34,7 +34,7 @@
 
         function refreshData(web3, output) {
 
-            call(web3.net.getPeerCount, [], output);
+            call(web3.net.getPeerCount, [1], output);
            
             /*
             web3.net.getPeerCount(function(err, peers) { 
