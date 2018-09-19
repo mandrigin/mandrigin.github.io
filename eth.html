@@ -15,7 +15,17 @@
             output.innerHTML = log;
         }
 
-        function callWeb3(func, params, output) {
+        function executeFunctionByName(functionName, context /*, args */) {
+          var args = Array.prototype.slice.call(arguments, 2);
+          var namespaces = functionName.split(".");
+          var func = namespaces.pop();
+          for(var i = 0; i < namespaces.length; i++) {
+            context = context[namespaces[i]];
+          }
+          return context[func].apply(context, args);
+        }
+
+        function callWeb3(web3, func, params, output) {
             append(output, ["debug: callWeb3: ", [func.name, params.length]]);
 
             var callback = function(err, result) {
@@ -32,13 +42,13 @@
 
             append(output, ["debug: p: ", params]);
 
-            func.apply(params);
+            executeFunctionByName(web3, "net.getPeerCount", params);
         }
 
 
         function refreshData(web3, output) {
 
-            callWeb3(web3.net.getPeerCount, [1], output);
+            callWeb3(web3, web3.net.getPeerCount, [], output);
            
             /*
             web3.net.getPeerCount(function(err, peers) { 
