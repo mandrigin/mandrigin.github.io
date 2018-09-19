@@ -16,7 +16,7 @@
         }
 
         function executeFunctionByName(o, functionName, context /*, args */) {
-            append(o, ["debug: executeFunctionByName: ", functionName]);
+          append(o, ["debug: executeFunctionByName: ", functionName]);
           var args = Array.prototype.slice.call(arguments, 3);
           var namespaces = functionName.split(".");
           var func = namespaces.pop();
