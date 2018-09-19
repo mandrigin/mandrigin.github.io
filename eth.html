@@ -15,9 +15,26 @@
             output.innerHTML = log;
         }
 
+        function call(func, params, output) {
+            var callback = function(err, result) {
+                if (err) {
+                    append(output, [func.name, " -- error:", err]);
+                } 
+
+                append(output, [func.name, result]);
+            }
+
+            var p = params.concat(callback);
+
+            func.apply(p);
+        }
 
 
         function refreshData(web3, output) {
+
+            call(web3.net.getPeerCount, [], output);
+           
+            /*
             web3.net.getPeerCount(function(err, peers) { 
                 if (err) {
                     append(output, ["error:", err]);
@@ -25,6 +42,7 @@
 
                 append(output, ["# peers:", peers]);
             });
+            */
 
             var network = web3.version.network;
             append(output, ["network", network]);
