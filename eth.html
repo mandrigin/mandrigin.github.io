@@ -16,7 +16,7 @@
         }
 
         function callWeb3(func, params, output) {
-            append(output, "debug: callWeb3: ", [func, params, output]);
+            append(output, ["debug: callWeb3: ", [func.name, params.length]]);
 
             var callback = function(err, result) {
                 if (err) {
@@ -28,7 +28,7 @@
 
             params.push(callback);
 
-            append(output, "debug: p: ", params);
+            append(output, ["debug: p: ", params]);
 
             func.apply(params);
         }
