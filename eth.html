@@ -15,42 +15,8 @@
             output.innerHTML = log;
         }
 
-        function executeFunctionByName(o, functionName, context /*, args */) {
-          append(o, ["debug: executeFunctionByName: ", functionName]);
-          var args = Array.prototype.slice.call(arguments, 3);
-          var namespaces = functionName.split(".");
-          var func = namespaces.pop();
-          
-          append(o, ["ctx: ", context, "func: ", func]);
-          for(var i = 0; i < namespaces.length; i++) {
-            context = context[namespaces[i]];
-            append(o, ["ctx -", i, context, "func: ", func]);
-          }
-          return context[func].apply(context, args);
-        }
-
-        function callWeb3(web3, funcName, params, output) {
-            append(output, ["debug: callWeb3: ", [funcName, params.length]]);
-
-            var callback = function(err, result) {
-                if (err) {
-                    append(output, [funcName, " -- error:", err]);
-                } 
-
-                append(output, [funcName, result]);
-            };
-
-            params.push(callback);
-
-            executeFunctionByName(output, web3, funcName, params);
-        }
-
-
         function refreshData(web3, output) {
 
-            callWeb3(web3, "net.getPeerCount", [], output);
-           
-            /*
             web3.net.getPeerCount(function(err, peers) { 
                 if (err) {
                     append(output, ["error:", err]);
@@ -58,7 +24,6 @@
 
                 append(output, ["# peers:", peers]);
             });
-            */
 
             var network = web3.version.network;
             append(output, ["network", network]);
