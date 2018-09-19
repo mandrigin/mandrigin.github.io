@@ -45,7 +45,7 @@
                 append(output, ["latest block:", block]);
             });
 
-            web3.eth.getSyncing(callback(error, result){ 
+            web3.eth.getSyncing(function(error, result){ 
                 if (err) {
                     append(output, ["error:", err]);
                 } 
