@@ -26,6 +26,8 @@
 
             var p = params.concat(callback);
 
+            append(output, "debug: p: ", p);
+
             func.apply(p);
         }
 
