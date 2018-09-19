@@ -16,16 +16,13 @@
         }
 
         function refreshData(web3, output) {
-
-            /*
-            web3.admin.getPeers(function(err, peers) { 
+            web3.net.peerCount(function(err, peers) { 
                 if (err) {
                     append(output, ["error:", err]);
                 } 
 
-                append(output, ["peers:", peers]);
+                append(output, ["# peers:", peers]);
             });
-            */
 
             var network = web3.version.network;
             append(output, ["network", network]);
